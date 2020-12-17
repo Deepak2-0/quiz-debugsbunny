@@ -6,7 +6,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### details about the assignment
+# Details about the assignment
 links are:
 http://localhost:3000  for list of quiz
 http://localhost:3000/admin for adding quiz
