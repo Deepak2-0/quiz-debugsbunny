@@ -13,7 +13,7 @@ http://localhost:3000/admin for adding quiz\
 http://localhost:3000/quiz/:id starting a specific quiz  \
 
 ## To run the project on local
-clone the GitHub repo
+clone the GitHub repo\
 npm i\
 To install all the necessary packages\
 npm start\
