@@ -2,54 +2,16 @@ import React, { useState } from "react";
 import OptionsView from "./OptionsView";
 import FunctionalButton from "./FunctionalButton";
 
-let quiz1 = [
-  {
-    question: "Grand Central Terminal, Park Avenue, New York is the world's",
-    options: [
-      "largest railway station",
-      "highest railway station",
-      "longest railway station",
-      "None of the above",
-    ],
-    answerIndex: 0,
-  },
-  {
-    question: "Entomology is the science that studies",
-    options: [
-      "Behavior of human beings",
-      "Insects",
-      "The origin and history of technical and scientific terms",
-      "The formation of rocks",
-    ],
-    answerIndex: 1,
-  },
-  {
-    question: "The World Largest desert is",
-    options: ["Thar", "Kalahari", "Sahara", "Sonoran"],
-    answerIndex: 2,
-  },
-  {
-    question: "Country that has the highest in Barley Production",
-    options: ["China", "India", "Russia", "France"],
-    answerIndex: 2,
-  },
-  {
-    question: "The Central Rice Research Station is situated in",
-    options: ["Chennai", "Cuttack", "Bengaluru", "Quilon"],
-    answerIndex: 1,
-  },
-  {
-    question: "Mount Everest is located in",
-    options: ["India", "China", "Bhutan", "Nepal"],
-    answerIndex: 3,
-  },
-];
 
 let answersPut = [];
 
-const StartQuiz = () => {
+const StartQuiz = (props) => {
+  const {quizData} = props;
+
   const [view, setView] = useState(0);
   const [user, setUser] = useState([]);
+  
+
 
   const changeQuestion = (btn) => {
     let btnType = "";
@@ -68,10 +30,10 @@ const StartQuiz = () => {
   };
 
   const handleSubmit = (userdata) => {
-    //console.log("Submitted");
-    //console.log(userdata);
+
     setUser((prevValues)=>{
       let temp =  [prevValues,userdata];
+      localStorage.setItem("user",temp); //saving data in local storage
       console.log(temp);
       return (temp);
     })
@@ -83,7 +45,7 @@ const StartQuiz = () => {
       questionNumber: view+1,
       answergiven:index+1
     })
-    if(view === quiz1.length -1){
+    if(view === quizData.length -1){
       setUser({userlog:answersPut});
       return;
     }
@@ -98,17 +60,17 @@ const StartQuiz = () => {
               <div className="d-flex flex-row justify-content-between align-items-center mcq">
                 <h4>MCQ Quiz</h4>
                 <span>
-                  ({view + 1} of {quiz1.length})
+                  ({view + 1} of {quizData.length})
                 </span>
               </div>
             </div>
             <div className="question bg-white p-3 border-bottom">
               <div className="d-flex flex-row align-items-center question-title">
                 <h3 className="text-danger literal-q">Q.</h3>
-                <h5 className="mt-1 ml-2">{quiz1[view].question}</h5>
+                <h5 className="mt-1 ml-2">{quizData[view].question}</h5>
               </div>
 
-              {quiz1[view].options.map((option, index) => (
+              {quizData[view].options.map((option, index) => (
                 <OptionsView
                   key={index}
                   option={option}
@@ -122,7 +84,7 @@ const StartQuiz = () => {
               changeQuestion={changeQuestion}
               handleSubmit={handleSubmit}
               view={view}
-              quizLength={quiz1.length}
+              quizLength={quizData.length}
             />
           </div>
         </div>

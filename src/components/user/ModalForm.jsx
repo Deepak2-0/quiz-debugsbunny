@@ -29,6 +29,7 @@ const ModalForm = (props) => {
     if(currentUser.name === "" || currentUser.number === ""){
       return;
     }
+    //console.log(currentUser);
     onSubmit(currentUser);
     
   }

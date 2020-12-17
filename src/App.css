@@ -50,3 +50,19 @@ label.radio input {
   padding: 1rem;
   flex:0;
 }
+
+.home-table-top{
+  background-color: black;
+  color: white;
+}
+
+.addQuestion-button{
+  margin:20px 0;
+}
+.addQuiz-button{
+  margin:20px 0 20px 20px; 
+}
+
+.form-group{
+  margin: 20px 0;
+}

@@ -14,15 +14,7 @@ const FunctionalButton = (props) => {
       >
         <i className="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous
       </button>
-
-      {/* <button
-        className="btn btn-primary d-flex align-items-center btn-primary"
-        type="button"
-        onClick={handleSubmit}
-      >
-        Submit
-      </button> */}
-
+      
       <ModalForm onSubmit={handleSubmit} />
 
       <button
