@@ -6,11 +6,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-# Details about the assignment
-links are:
-http://localhost:3000  for list of quiz
-http://localhost:3000/admin for adding quiz
-http://localhost:3000/quiz/:id starting a specific quiz  
+# Details about the project
+links are:\
+http://localhost:3000  for list of quiz\
+http://localhost:3000/admin for adding quiz\
+http://localhost:3000/quiz/:id starting a specific quiz  \
+
+## To run the project on local
+clone the GitHub repo
+npm i\
+To install all the necessary packages\
+npm start\
+To run the project
+
 
 
 # Getting Started with Create React App
